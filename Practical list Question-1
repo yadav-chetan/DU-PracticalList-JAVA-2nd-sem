@@ -1,0 +1,102 @@
+/*
+  
+  Design a class Complex having a real part (X) and an imaginary part (y). Provide methods to perform the following on complex numbers:
+    a) Add two complex numbers.
+    b) Multiply two complex numbers.
+    c) toString() method to display complex numbers in the form: x+iy.
+    
+*/
+
+//Solution: 1
+
+// This code will take input form the coder during the runtime means its is not a user define for that go down and get the user define solution with small 
+// change.
+
+public class Main {
+    public static void main(String[] args) {
+        Complex c1 = new Complex(2,3);
+        Complex c2 = new Complex(3,4);
+        System.out.println("First Complex Number: " + c1);
+        System.out.println("Second Complex Number: " + c2);
+        System.out.println("Sum of Complex Numbers: " + c1.add(c2));
+        System.out.println("Product of Complex Numbers: " + c1.multiply(c2));
+
+    }
+}
+class Complex{
+    private int x,y;
+
+    public Complex(int real, int imaginary) {
+        this.x = real;
+        this.y = imaginary;
+
+    }
+    public Complex add(Complex first){
+       return new Complex(this.x + first.x, y + first.y);
+    }
+    public Complex multiply(Complex first){
+        return new Complex(this.x * first.x-this.y* first.y, this.x*first.y+ this.y*first.x);
+    }
+    public String toString(){
+        return  x + " + i" + y;
+    }
+
+}
+
+//Solution: 2
+
+// User define solution.
+
+import java.util.Scanner;
+
+public class FirstQuestion {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int real;
+        int imaginary;
+        System.out.println("Enter the value for first Complex number.");
+        System.out.print("Enter the real value number: ");
+        real = sc.nextInt();
+        System.out.print("Enter the imaginary value number: ");
+        imaginary = sc.nextInt();
+        Complex c1 = new Complex(real, imaginary);
+        System.out.println("First Complex Number: " + c1);
+
+        System.out.println("Enter the value for second Complex number.");
+        System.out.print("Enter the real value number: ");
+        real = sc.nextInt();
+        System.out.print("Enter the imaginary value number: ");
+        imaginary = sc.nextInt();
+        Complex c2 = new Complex(real, imaginary);
+        System.out.println("Second Complex Number: " + c2);
+        
+        System.out.println("Sum of Complex Numbers: " + c1.add(c2));
+        System.out.println("Product of Complex Numbers: " + c1.multiply(c2));
+
+    }
+}
+class Complex{
+    private int x,y;
+
+    public Complex(int real, int imaginary) {
+        this.x = real;
+        this.y = imaginary;
+
+    }
+    public Complex add(Complex first){
+       return new Complex(this.x + first.x, y + first.y);
+    }
+    public Complex multiply(Complex first){
+        return new Complex(this.x * first.x-this.y* first.y, this.x*first.y+ this.y*first.x);
+    }
+    public String toString(){
+        return  x + " + i" + y;
+    }
+    public int getX(){
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
+}
+
